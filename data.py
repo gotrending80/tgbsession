@@ -26,10 +26,9 @@ class Data:
     """
 
     HELP = """
+/start - Start the Bot
 /about - About The Bot
 /help - This Message
-/start - Start the Bot
-/generate - Generate Session
 /cancel - Cancel the process
 /restart - Cancel the process
 """
