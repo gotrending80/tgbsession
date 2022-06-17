@@ -62,9 +62,8 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             ty += " v2"
     if is_bot:
         ty += " Bot"
-    await msg.reply(f"Starting {ty} Session Generation...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, 'Please send your `API_ID`', filters=filters.text)
+    api_id_msg = await bot.ask(user_id, 'Enter Your `API_ID`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     try:
@@ -72,14 +71,14 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except ValueError:
         await api_id_msg.reply('Not a valid API_ID (which must be an integer). Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
-    api_hash_msg = await bot.ask(user_id, 'Please send your `API_HASH`', filters=filters.text)
+    api_hash_msg = await bot.ask(user_id, 'Enter Your `API_HASH`', filters=filters.text)
     if await cancelled(api_hash_msg):
         return
     api_hash = api_hash_msg.text
     if not is_bot:
-        t = "Now please send your `PHONE_NUMBER` along with the country code. \nExample : `+19876543210`'"
+        t = "Enter Your `PHONE_NUMBER` Example : `+62xxxxx`'"
     else:
-        t = "Now please send your `BOT_TOKEN` \nExample : `12345:abcdefghijklmnopqrstuvwxyz`'"
+        t = "Enter Your `BOT_TOKEN` From @BotFather"
     phone_number_msg = await bot.ask(user_id, t, filters=filters.text)
     if await cancelled(phone_number_msg):
         return
