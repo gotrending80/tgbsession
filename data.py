@@ -28,5 +28,5 @@ Welcome
 """
 
     ABOUT = """
-Telegram Bot to generate Pyrogram and Telethon string session by @StarkBots
+Telegram Bot to generate Pyrogram and Telethon string session
     """
