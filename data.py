@@ -5,7 +5,6 @@ class Data:
     generate_single_button = [InlineKeyboardButton("Start Generating Session", callback_data="generate")]
 
     home_buttons = [
-        generate_single_button,
         [InlineKeyboardButton(text="Return Home", callback_data="home")]
     ]
 
@@ -16,7 +15,7 @@ class Data:
     ]
 
     START = """
-Welcome
+Welcome To Telegram Bot Generate Session
     """
 
     HELP = """
@@ -28,5 +27,5 @@ Welcome
 """
 
     ABOUT = """
-Telegram Bot to generate Pyrogram and Telethon string session
+Telegram Bot Generate Session
     """
