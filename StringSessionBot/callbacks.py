@@ -44,7 +44,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         )
     elif query == "generate":
         await callback_query.answer()
-        await generate_session(bot, callback_query.message, telethon=True, is_bot=True)
+        await generate_session(bot, callback_query.message, telethon=True, is_bot=False)
     elif query.startswith("pyrogram") or query.startswith("telethon"):
         try:
             if query == "pyrogram":
