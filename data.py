@@ -22,7 +22,7 @@ class Data:
     ]
 
     START = """
-.
+Welcome
     """
 
     HELP = """
